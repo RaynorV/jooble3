@@ -1,0 +1,132 @@
+html {
+  background-color: 00BFFF;
+}
+
+body {
+  width: 850px;
+  height: 785px;
+  margin: 0 auto;
+  /*background-color: #9ACD32;*/
+  border: 5px solid #CAD1FF;
+  border-radius: 30px;
+
+}
+
+input {
+        background-color: #B6D0E2;
+}
+
+h1 {
+   background-color: #00FFFF;
+   font-size: 50px;
+   text-align: center;
+   width: 750px;
+   margin: 0 auto;
+   border: 2px solid black;
+   transition: 1.5s all;
+}
+
+
+h1:hover {
+        transform: rotate(5deg) scale(1.04);
+
+        background-color: #560bad;
+        color: #ade8f4;
+}
+
+
+#desc {
+        font-size: 21px;
+        background-color: #596EFF;
+        color: #370855;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 11px;
+}
+
+.var1 {
+        width: 550px;
+        font-size: 21px;
+        border: 2px solid #457b9d;
+        text-align: center;
+    border-radius: 30px;
+    background-color: #a8dadc;
+        opacity: 0.80;
+        height: 40;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+        box-shadow: 13px 13px 4px #1d3557;
+    font-style: normal;
+}
+
+.idi {
+        display: inline-block;
+
+}
+
+.en {
+        display: inline-block;
+
+}
+
+.show-id-n {
+        width: 500px;
+}
+
+.show-id-n:hover {
+        width: 520px;
+        opacity: 1;
+        font-size: 24px;
+        box-shadow: 13px 13px 7px #1d3557;
+}
+
+.edit {
+        display: inline-block;
+
+}
+
+.crt {
+        display: inline-block;
+}
+
+
+.crt-edit {
+        width: 160px;
+}
+
+.crt-edit:hover {
+        width: 170px;
+        opacity: 1;
+        font-size: 24px;
+        box-shadow: 13px 13px 7px #1d3557;
+}
+
+
+#result {
+    background-color: ADE8F0;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+.other-but:hover {
+        width: 600px;
+        opacity: 1;
+        font-size: 24px;
+        box-shadow: 13px 13px 7px #1d3557;
+}
+font-size: 21px;
+
+#choos {
+        font-size: 24px;
+        margin: 0;
+}
+
+p {
+   font-size: 20px;
+   background-color: 00BFFF;
+   text-align: center;
+}
+

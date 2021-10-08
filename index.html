@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Orangery</title>
+  </head>
+  <body bgcolor="00BFFF" text="000080" link="DF73FF">
+    <hr>
+    <h1>Welcome to our Orangery!</h1>
+    <hr>
+    <p id="desc"><b>Here you can see all database, edit, create or delete records.</b></p>
+    <p id="choos">Choose what u want:</p>
+    <a href="/" class="var1 v1 other-but" ><b>Clean the output</b></a><br>
+    <a href="/result" class="var1 v2 other-but"><b>Show all database</b></a><br>
+
+    <form action="{{ url_for('id_record') }}" method="post">
+        <input size="1" class="idi" name="send_id">Enter the record's ID </input>
+        <a onclick="this.closest('form').submit();return false;" class="var1 idi show-id-n"><b>Show the record by using ID</b></a><br><br>
+    </form>
+
+    <form action="{{ url_for('n_record') }}" method="post">
+        <input size="1" class="en" name="send_n">Enter N-last records </input>
+        <a onclick="this.closest('form').submit();return false;" class="var1 en show-id-n"><b>Show N-last records</b></a><br><br>
+    </form>
+
+    <form action="{{ url_for('delete_id') }}" method="post">
+        <input size="1" class="idi" name="send_del_id">Enter the record's ID </input>
+        <a onclick="this.closest('form').submit();return false;" class="var1 idi show-id-n"><b>Delete the record by using ID</b></a><br><br>
+    </form>
+
+    <form action="{{ url_for('edit_record') }}" method="post">
+        <input size="1" class="edit" name="edit_id">ID </input>
+        <input size="6" class="edit" name="edit_name">Name </input>
+        <input size="8" class="edit" name="edit_desc">Description</input>
+        <input size="1" class="edit" name="edit_number">Number</input>
+        <input size="1" class="edit" name="edit_price">Price</input>
+        <input size="1" class="edit" name="edit_rare">Rare? (Y|N)</input>
+        <a onclick="this.closest('form').submit();return false;" class="var1 v5 crt-edit edit"><b>Edit the record</b></a><br><br>
+    </form>
+
+    <form action="{{ url_for('create_record') }}" method="post">
+        <input size="10" class="crt" name="create_name">Name </input>
+        <input size="14" class="crt" name="create_desc">Description</input>
+        <input size="1" class="crt" name="create_number">Number</input>
+        <input size="1" class="crt" name="create_price">Price</input>
+        <input size="1" class="crt" name="create_rare">Rare? (Y|N)</input>
+        <a onclick="this.closest('form').submit();return false;" class="var1 v5 crt-edit crt"><b>Create</b></a><br>
+    </form>
+
+    <p><textarea id="result" rows="12" cols="78" type="text" disabled>{{ out }}</textarea></p>
+  </body>
+</html>
+
