@@ -1,0 +1,6 @@
+
+
+Needed modules:
+
+	pip install flask-mysql
+	pip install Flask
