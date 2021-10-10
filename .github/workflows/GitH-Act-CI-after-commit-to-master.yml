@@ -9,11 +9,11 @@ on:
 
 jobs:
   check-requirements:
-    runs-on: ubuntu-latestqw
+    runs-on: ubuntu-latest
 
     steps:
       - name: Git clone my repository
-        uses: actions/checkout@v1
+        uses: qqqqqqqqactions/checkout@v1
 
 
       # Runs a single command using the runners shell
