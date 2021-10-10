@@ -1,3 +1,3 @@
-# jooble3
+# Jooble Task-3. Configuration CI pipeline with GitHub Actions
 
-Configuration CI pipeline with GitHub Actions
+
