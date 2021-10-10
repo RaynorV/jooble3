@@ -22,4 +22,12 @@ jobs:
         
       - name: Install requirements
         run: pip install -r requirements.txt
+        
+      - uses: actions/checkout@master
+      - name: send custom message with args
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
 
