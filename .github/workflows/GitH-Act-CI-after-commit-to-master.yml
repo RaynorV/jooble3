@@ -9,7 +9,7 @@ on:
 
 jobs:
   check-requirements:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestqw
 
     steps:
       - name: Git clone my repository
