@@ -31,7 +31,7 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: conection!!!!!
-        run: ssh -oStrictHostKeyChecking=no -i key.pem ubuntu@3.66.211.84 'echo "hello form Ansible server!"'
+        run: scp -oStrictHostKeyChecking=no artifact.tar.bz2 -i key.pem ubuntu@3.66.211.84:/home/ubuntu/fromgit 
         
       - name: Install requirements
         run: pip install -r requirements.txt
