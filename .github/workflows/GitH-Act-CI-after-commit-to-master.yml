@@ -25,7 +25,7 @@ jobs:
         run: tar cvf artifact.tar *
         
       - name: make bzip2 archive
-        run: bzip2 atrifact.tar
+        run: bzip2 artifact.tar
         
       # Runs a single command using the runners shell
       - name: check that everything is installed
