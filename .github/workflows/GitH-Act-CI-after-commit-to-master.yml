@@ -15,14 +15,25 @@ jobs:
       - name: Git clone my repository
         uses: actions/checkout@v1
 
-
+######################################################
+      # Runs a single command using the runners shell
+      - name: check that everything is installed
+        run: ls -la
+        
+      # Runs making an Artifact
+      - name: make tar archive
+        run: tar cvf artifact.tar *
+        
+      - name: make bzip2 archive
+        run: bzip2 atrifact.tar
+        
       # Runs a single command using the runners shell
       - name: check that everything is installed
         run: ls -la
         
       - name: Install requirements
         run: pip install -r requirements.txt
-        
+        ##########################################
       - uses: actions/checkout@master
       - name: Sending a message to telegram
         uses: appleboy/telegram-action@master
