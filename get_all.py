@@ -88,7 +88,7 @@ def create(name, desc, number, price, rare):
         result = cursor.execute(f'''INSERT INTO plants (plant_id, name, description, number, price, rare)  VALUES(NULL, '{name}', '{desc}', '{number}', '{price}', '{rare}')''')
         conn.commit()
         cursor.close()
-        return ("tDone ! ...")
+        return ("Done ! ...")
     except Exception:
         pass
         return ('Something is wrong with your entered data')
