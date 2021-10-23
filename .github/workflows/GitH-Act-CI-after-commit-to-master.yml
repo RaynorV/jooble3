@@ -1,5 +1,4 @@
 
-
 name: my-GH-Act
 
 
@@ -43,4 +42,18 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
+
+#Testing part !!!!!!!
+      - name: Installing Apache server
+        run: |
+          pwd
+          cat /etc/os-release
+          ls /var/www
+        
+        
+
+
+
+
+
 
