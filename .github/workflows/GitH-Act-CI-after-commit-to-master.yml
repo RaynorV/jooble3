@@ -28,9 +28,9 @@ jobs:
           chmod 600 key.pem
           
         
-      # Runs a single command using the runners shell
-      - name: conection!!!!!
-        run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@18.192.53.140:/home/ubuntu/fromgit 
+      # Runs a single command using the runners shell  {||| cancelled |||}
+      #- name: conection!!!!!
+        #run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@18.192.53.140:/home/ubuntu/fromgit 
         
       - name: Install requirements
         run: pip install -r requirements.txt
