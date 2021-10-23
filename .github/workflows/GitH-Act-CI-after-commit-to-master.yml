@@ -29,8 +29,8 @@ jobs:
           
         
       # Runs a single command using the runners shell  {||| cancelled |||}
-      #- name: conection!!!!!
-        #run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@18.192.53.140:/home/ubuntu/fromgit 
+      - name: conection!!!!!
+        run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@3.121.233.246:/home/ubuntu/fromgit 
         
       - name: Install requirements
         run: pip install -r requirements.txt
@@ -43,31 +43,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
 
-#Testing part !!!!!!!
-      - name: Install Apache
-        run: |
-          pwd
-          sudo apt update
-          sudo apt install apache2
-          echo "GETTING ADMIN PERMS SETUP"
 
-
-          sudo adduser $(whoami) www-data
-          sudo adduser $(whoami) root
-          sudo adduser root www-data
-
-          sudo chown -R www-data:www-data /etc/apache2/sites-available/
-          sudo chmod -R 777 /etc/apache2/sites-available/
-          sudo chown -R www-data:www-data /var/www/html/
-          sudo chmod -R 777 /var/www/html/
-
-          
-          ls -l /etc/apache2/sites-available/000-default.conf 
-          ls -l /etc/apache2/sites-available
-          ls -l /etc/apache2/
-          cat /etc/apache2/sites-available/000-default.conf
-          curl -I localhost
-        
         
 
 
