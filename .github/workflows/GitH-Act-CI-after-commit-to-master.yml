@@ -44,11 +44,29 @@ jobs:
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
 
 #Testing part !!!!!!!
-      - name: Installing Apache server
+      - name: Install Apache
         run: |
           pwd
-          cat /etc/os-release
-          ls /var/www
+          sudo apt update
+          sudo apt install apache2
+          echo "GETTING ADMIN PERMS SETUP"
+
+
+          sudo adduser $(whoami) www-data
+          sudo adduser $(whoami) root
+          sudo adduser root www-data
+
+          sudo chown -R www-data:www-data /etc/apache2/sites-available/
+          sudo chmod -R 777 /etc/apache2/sites-available/
+          sudo chown -R www-data:www-data /var/www/html/
+          sudo chmod -R 777 /var/www/html/
+
+          
+          ls -l /etc/apache2/sites-available/000-default.conf 
+          ls -l /etc/apache2/sites-available
+          ls -l /etc/apache2/
+          cat /etc/apache2/sites-available/000-default.conf
+          curl -I localhost
         
         
 
