@@ -45,7 +45,7 @@ jobs:
 
       - name: Updating Web-site Version of Testing server 
         run: |
-          ssh -i key.pem -t ubuntu@3.121.233.246 'sudo cp /home/ubuntu/fromgit/artifact.tar.bz2 /var/www/html/web | sudo tar xvf /var/www/html/webartifact.tar.bz2'
+          ssh -i key.pem ubuntu@3.121.233.246 'ls'
 
 
         
