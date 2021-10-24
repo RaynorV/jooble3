@@ -33,7 +33,7 @@ jobs:
         run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@3.121.233.246:/home/ubuntu/fromgit 
         
       - name: Install requirements
-        run: pip install -r requirements.txt
+        run: sudo pip install -r requirements.txt
         ##########################################
       - uses: actions/checkout@master
       - name: Sending a message to telegram
@@ -42,6 +42,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
+
+      - name: Updating Web-site Version of Testing server 
+        run: |
+          ssh ubuntu@3.121.233.246 'cp /home/ubuntu/fromgit/artifact.tar.bz2 /var/www/html/web | tar xvf /var/www/html/webartifact.tar.bz2'
 
 
         
