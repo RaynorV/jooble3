@@ -26,11 +26,13 @@ jobs:
           bzip2 artifact.tar
           echo "${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}" > key.pem
           chmod 600 key.pem
+          scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@3.121.233.246:/home/ubuntu/fromgit
+          ssh ls
           
         
       # Runs a single command using the runners shell  {||| cancelled |||}
-      - name: conection!!!!!
-        run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@3.121.233.246:/home/ubuntu/fromgit 
+      #- name: conection!!!!!
+        #run: scp -oStrictHostKeyChecking=no -i key.pem artifact.tar.bz2 ubuntu@3.121.233.246:/home/ubuntu/fromgit 
         
       - name: Install requirements
         run: sudo pip install -r requirements.txt
