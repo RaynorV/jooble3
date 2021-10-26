@@ -26,7 +26,6 @@ jobs:
           bzip2 artifact.tar
           echo "${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}" > key.pem
           chmod 600 key.pem
-          ssh-add key.pem
           
           
         
