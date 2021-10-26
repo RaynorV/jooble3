@@ -26,6 +26,7 @@ jobs:
           bzip2 artifact.tar
           echo "${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}" > key.pem
           chmod 600 key.pem
+          ssh-add key.pem
           
           
         
@@ -49,8 +50,8 @@ jobs:
         uses: appleboy/ssh-action@master
         with: 
           host: 3.121.233.246
-          username: $ ubuntu
-          key: key.pem
+          username: ubuntu
+          key: ${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}
           port: 22
           script: |
             whoami
