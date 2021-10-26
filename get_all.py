@@ -7,7 +7,7 @@ def connection_to_db():
     app.config['MYSQL_DATABASE_USER'] = 'mr-robot'
     app.config['MYSQL_DATABASE_PASSWORD'] = 'dfcdewq1'
     app.config['MYSQL_DATABASE_DB'] = 'orangery'
-    app.config['MYSQL_DATABASE_HOST'] = '3.68.101.77'
+    app.config['MYSQL_DATABASE_HOST'] = '35.158.103.32'
     mysql.init_app(app)
     conn = mysql.connect()
     cursor =conn.cursor()
