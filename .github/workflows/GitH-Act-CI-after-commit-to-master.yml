@@ -50,7 +50,7 @@ jobs:
         with: 
           host: 3.121.233.246
           username: $ ubuntu
-          key: ${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}
+          key: key.pem
           port: 22
           script: |
             whoami
