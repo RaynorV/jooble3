@@ -27,6 +27,7 @@ jobs:
           echo "${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}" > key.pem
           chmod 600 key.pem
           
+          
         
        #Runs a single command using the runners shell  
       - name: conection!!!!!
@@ -54,6 +55,7 @@ jobs:
           script: |
             whoami
             ls -al
+            ansible-playbook /home/ubuntu/ansible/playbook_green_server_update_version.yml
           
 
 
