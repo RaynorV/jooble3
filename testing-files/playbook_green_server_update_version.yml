@@ -1,0 +1,37 @@
+---
+
+ - name: Uploading new verison of program to Green Server
+   hosts: green_servers
+   become: yes
+
+   vars:
+     new_archive: /home/ubuntu/after-testing/artifact.tar.bz2
+     dest: /var/www/html/web
+
+   tasks:
+
+     - name: copying
+       copy: src={{ new_archive }} dest={{ dest }}
+
+
+     - name: unarchive  (bzip2)
+       shell: bunzip2 /var/www/html/web/artifact.tar.bz2
+
+     - name: unarchive  (tar)
+       ansible.builtin.unarchive:
+         src: /var/www/html/web/artifact.tar
+         dest: /var/www/html/web
+         remote_src: yes
+
+     - name: Remove file (delete file)
+       ansible.builtin.file:
+         path: /var/www/html/web/artifact.tar
+         state: absent
+
+     - name: Install requirements.txt
+       shell: pip install -r requirements.txt
+
+
+     - name: reastart apache
+       service: name=apache2 state=restarted
+
