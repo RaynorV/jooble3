@@ -57,6 +57,7 @@ jobs:
             ls -al
             ansible-playbook /home/ubuntu/ansible/playbook_green_server_update_version.yml
             python3 /home/ubuntu/progrraming/1.0/testing-api.py
+            python3 /home/ubuntu/jmiter/test-performance.py
           
 
 
