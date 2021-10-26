@@ -43,9 +43,18 @@ jobs:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
 
-      #- name: Updating Web-site Version of Testing server 
-       # run: |
-        #  ssh -i key.pem ubuntu@3.121.233.246 'ls'
+        # DEPLOY
+      - name: executing ansible playbook in CICD server 
+        uses: appleboy/ssh-action@master
+        with: 
+          host: 3.121.233.246
+          username: $ ubuntu
+          key: ${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}
+          port: 22
+          script: |
+            whoami
+            ls -al
+          
 
 
         
