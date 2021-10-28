@@ -59,6 +59,15 @@ jobs:
             python3 -m unittest /home/ubuntu/testing-api.py -v
             
             
+      - uses: actions/checkout@master
+      - name: Sending a message to telegram about successful API tests
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          args: API-Testing is successesful. All tests are passed. Code is ready for the next step!
+
+
       - name: Performance testing
         uses: appleboy/ssh-action@master
         with: 
@@ -69,7 +78,7 @@ jobs:
           script: |
             whoami
             ls -al
-            python3 /home/ubuntu/jmiter/test-performance.py
+            #python3 /home/ubuntu/jmiter/test-performance.py
           
 
 
