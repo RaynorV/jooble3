@@ -45,7 +45,7 @@ jobs:
           args: The ${{ github.event_name }} event triggered. Commit to Master branch was done successfully. All modules can be installed easily :D
 
         # DEPLOY
-      - name: executing ansible playbook in CICD server 
+      - name: executing ansible playbook in CICD server & API tests
         uses: appleboy/ssh-action@master
         with: 
           host: 3.121.233.246
@@ -57,7 +57,20 @@ jobs:
             ls -al
             ansible-playbook /home/ubuntu/ansible/playbook_green_server_update_version.yml
             python3 -m unittest /home/ubuntu/testing-api.py -v
-            python3 /home/ubuntu/jmiter/test-performance.py
+            #python3 /home/ubuntu/jmiter/test-performance.py
+            
+            
+      - name: Performance testing
+        uses: appleboy/ssh-action@master
+        with: 
+          host: 3.121.233.246
+          username: ubuntu
+          key: ${{ secrets.RSA_KEY_FOR_ANSIBLE_SERVER }}
+          port: 22
+          script: |
+            whoami
+            ls -al
+            #python3 /home/ubuntu/jmiter/test-performance.py
           
 
 
