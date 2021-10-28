@@ -57,7 +57,6 @@ jobs:
             ls -al
             ansible-playbook /home/ubuntu/ansible/playbook_green_server_update_version.yml
             python3 -m unittest /home/ubuntu/testing-api.py -v
-            #python3 /home/ubuntu/jmiter/test-performance.py
             
             
       - name: Performance testing
@@ -70,7 +69,7 @@ jobs:
           script: |
             whoami
             ls -al
-            #python3 /home/ubuntu/jmiter/test-performance.py
+            python3 /home/ubuntu/jmiter/test-performance.py
           
 
 
